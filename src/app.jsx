@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import titik from "./Assets/titik.png";
 import bulet from "./Assets/bulet.png";
+import jukut from "./Assets/jukut.png";
+import x from "./Assets/x.png";
+import buletW from "./Assets/buletW.png";
+import kotak from "./Assets/kotak.png";
 
 const App = () => {
   const [latestImageUrl, setLatestImageUrl] = useState("");
@@ -46,26 +50,36 @@ const App = () => {
           alt=""
           className="w-64 h-64 absolute -z-10 -bottom-32 -left-24"
         />
+        <img
+          src={jukut}
+          alt=""
+          className="w-48 h-48 absolute -z-10 -top-2 right-0 rotate-45"
+        />
+        <img
+          src={x}
+          alt=""
+          className="w-24 h-24 absolute -z-10 -bottom-0 right-4 rotate-3"
+        />
         <div className="flex flex-col items-center mt-10">
-          <div className="border-2 border-black p-6 rounded-lg shadow-lg mb-6 h-28 w-64 flex flex-col justify-center items-center">
+          <div className="border-2 border-black p-6 rounded-lg shadow-custom mb-6 h-28 w-64 flex flex-col justify-center items-center">
             <h2 className="text-xl font-bold">LEAD</h2>
             <p>Narapati Keysa A</p>
             <p className="font-semibold">223040155</p>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="border-2 border-black p-4 rounded-lg shadow-lg h-28 w-64 flex flex-col justify-center items-center">
+            <div className="border-2 border-black p-4 rounded-lg shadow-custom h-28 w-64 flex flex-col justify-center items-center">
               <p>Rafli Ramdhani</p>
               <p className="font-semibold">223040010</p>
             </div>
-            <div className="border-2  border-black p-4 rounded-lg shadow-lg h-28 w-64 flex flex-col justify-center items-center">
+            <div className="border-2  border-black p-4 rounded-lg shadow-custom h-28 w-64 flex flex-col justify-center items-center">
               <p>Bhadrika Aryaputra H</p>
               <p className="font-semibold">223040018</p>
             </div>
-            <div className="border-2  border-black p-4 rounded-lg shadow-lg h-28 w-64 flex flex-col justify-center items-center">
+            <div className="border-2  border-black p-4 rounded-lg shadow-custom h-28 w-64 flex flex-col justify-center items-center">
               <p>Lisvindanu</p>
               <p className="font-semibold">223040038</p>
             </div>
-            <div className="border-2  border-black p-4 rounded-lg shadow-lg h-28 w-64 flex flex-col justify-center items-center ">
+            <div className="border-2  border-black p-4 rounded-lg shadow-custom h-28 w-64 flex flex-col justify-center items-center ">
               <p>Anin Denin N</p>
               <p className="font-semibold">223040109</p>
             </div>
@@ -73,10 +87,20 @@ const App = () => {
         </div>
       </div>
 
-      <div className="w-1/2 h-screen bg-black rounded-l-gede flex flex-col justify-center text-white">
-        <div className="text-4xl font-semibold tracking-jarak flex justify-center">
+      <div className="w-1/2 h-screen bg-black rounded-l-gede flex flex-col justify-center text-white overflow-y-hidden">
+        <div className="text-4xl font-semibold tracking-jarak flex justify-center ">
           VISUALISASI
         </div>
+        <img
+          src={buletW}
+          alt=""
+          className="w-64 h-64 absolute -bottom-32 -right-20"
+        />
+        <img
+          src={kotak}
+          alt=""
+          className="w-52 h-52 absolute -top-9 -right-20"
+        />
         <div className=" flex justify-center semi-bold text-xl mb-4 mt-1 tracking-widest">
           Realtime Graph
         </div>
@@ -91,7 +115,7 @@ const App = () => {
                   id="latestImage"
                   src={latestImageUrl}
                   alt="Latest Image"
-                  className=""
+                  className="z-30"
                 />
               ) : (
                 <p className="text-center text-black items-center">

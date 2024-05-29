@@ -15,6 +15,9 @@ export default {
           "border-top-left-radius": "2.5rem",
           "border-bottom-left-radius": "2.5rem",
         },
+        ".shadow-custom": {
+          "box-shadow": "6px 8px black",
+        },
       };
       addUtilities(newUtilities, ["responsive", "hover"]);
     },
