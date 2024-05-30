@@ -5,6 +5,7 @@ import jukut from "./Assets/jukut.png";
 import x from "./Assets/x.png";
 import buletW from "./Assets/buletW.png";
 import kotak from "./Assets/kotak.png";
+import Swal from "sweetalert2";
 
 const App = () => {
   const [latestImageUrl, setLatestImageUrl] = useState("");
@@ -32,6 +33,26 @@ const App = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    window.onload = (event) => {
+      console.log("page is fully loaded");
+
+      const navigationEntries =
+        window.performance.getEntriesByType("navigation");
+      const isReload = navigationEntries.some((nav) => nav.type === "reload");
+
+      if (isReload) {
+        Swal.fire({
+          title: "NGAPAIN RELOAD",
+          text: "SUDAH REALTIME MASBRO",
+          icon: "info",
+        });
+      } else {
+        console.log("Navigation type is not reload.");
+      }
+    };
+  }, []);
+
   return (
     <div className="flex overflow-y-hidden ">
       <div className="w-1/2 relative flex flex-col justify-center items-center">
@@ -40,7 +61,7 @@ const App = () => {
           alt=""
           className="w-64 h-64 absolute -left-24 -top-32 -z-10"
         />
-        <div className="ml-12 mt-10  absolute top-0 left-0">
+        <div className="ml-12 mt-10 absolute top-0 left-0">
           <div className="text-5xl font-semibold tracking-jarak">GRAF</div>
           <div className="text-5xl tracking-jarak">AKADEMIK</div>
           <div className="text-xl">Kelas D - Kelompok 2</div>
@@ -71,15 +92,15 @@ const App = () => {
               <p>Rafli Ramdhani</p>
               <p className="font-semibold">223040010</p>
             </div>
-            <div className="border-2  border-black p-4 rounded-lg shadow-custom h-28 w-64 flex flex-col justify-center items-center">
+            <div className="border-2 border-black p-4 rounded-lg shadow-custom h-28 w-64 flex flex-col justify-center items-center">
               <p>Bhadrika Aryaputra H</p>
               <p className="font-semibold">223040018</p>
             </div>
-            <div className="border-2  border-black p-4 rounded-lg shadow-custom h-28 w-64 flex flex-col justify-center items-center">
+            <div className="border-2 border-black p-4 rounded-lg shadow-custom h-28 w-64 flex flex-col justify-center items-center">
               <p>Lisvindanu</p>
               <p className="font-semibold">223040038</p>
             </div>
-            <div className="border-2  border-black p-4 rounded-lg shadow-custom h-28 w-64 flex flex-col justify-center items-center ">
+            <div className="border-2 border-black p-4 rounded-lg shadow-custom h-28 w-64 flex flex-col justify-center items-center ">
               <p>Anin Denin N</p>
               <p className="font-semibold">223040109</p>
             </div>
@@ -101,7 +122,7 @@ const App = () => {
           alt=""
           className="w-52 h-52 absolute -top-9 -right-20"
         />
-        <div className=" flex justify-center semi-bold text-xl mb-4 mt-1 tracking-widest">
+        <div className="flex justify-center semi-bold text-xl mb-4 mt-1 tracking-widest">
           Realtime Graph
         </div>
         <div className="container max-w-lg mx-auto p-4 ">
